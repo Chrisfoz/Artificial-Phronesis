@@ -17,7 +17,12 @@ from typing import List, Dict, Any, Optional
 import logging
 
 from src.utils.neo4j_connection import Neo4jConnection
-from src.graphrag import GraphRAG
+from src.graphrag import GraphRAG, HybridRAG
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -45,16 +50,33 @@ templates = Jinja2Templates(directory="web/templates")
 # Initialize database connection
 db = None
 graphrag = None
+hybrid_rag = None
+use_google_rag = False
 
 
 @app.on_event("startup")
 async def startup_event():
     """Initialize database connections on startup."""
-    global db, graphrag
+    global db, graphrag, hybrid_rag, use_google_rag
     try:
         db = Neo4jConnection()
-        graphrag = GraphRAG(db)
-        logger.info("Database connections initialized")
+
+        # Check which RAG provider to use
+        rag_provider = os.getenv("RAG_PROVIDER", "google").lower()
+
+        if rag_provider == "google" and os.getenv("GOOGLE_API_KEY"):
+            try:
+                hybrid_rag = HybridRAG(db)
+                use_google_rag = True
+                logger.info("Initialized Hybrid RAG with Google File Search")
+            except Exception as e:
+                logger.warning(f"Failed to initialize Google File Search: {e}")
+                logger.info("Falling back to standard GraphRAG")
+                graphrag = GraphRAG(db)
+        else:
+            graphrag = GraphRAG(db)
+            logger.info("Initialized standard GraphRAG")
+
     except Exception as e:
         logger.error(f"Failed to initialize database: {e}")
 
@@ -274,11 +296,45 @@ async def search(query: SearchQuery) -> Dict[str, Any]:
 
 
 @app.post("/api/ask")
-async def ask_question(query: QuestionQuery) -> Dict[str, str]:
+async def ask_question(query: QuestionQuery) -> Dict[str, Any]:
     """Ask a question and get an LLM-powered answer using graph context."""
     try:
-        answer = graphrag.query_with_llm(query.question)
-        return {"question": query.question, "answer": answer}
+        if use_google_rag and hybrid_rag:
+            # Use Google File Search + Knowledge Graph
+            # Try to extract relevant concepts from the question
+            concepts = []
+            concept_keywords = [
+                "wisdom", "phronesis", "intelligence", "sapience",
+                "artificial wisdom", "artificial intelligence",
+                "machine phronesis", "computational sapience"
+            ]
+
+            question_lower = query.question.lower()
+            for keyword in concept_keywords:
+                if keyword in question_lower:
+                    # Capitalize first letter of each word
+                    concepts.append(keyword.title())
+
+            result = hybrid_rag.query_with_context(
+                query.question,
+                concepts=concepts if concepts else None,
+                include_graph_context=True
+            )
+
+            return {
+                "question": query.question,
+                "answer": result['answer'],
+                "sources": result.get('sources', []),
+                "provider": "Google File Search + Neo4j"
+            }
+        else:
+            # Fallback to standard GraphRAG
+            answer = graphrag.query_with_llm(query.question)
+            return {
+                "question": query.question,
+                "answer": answer,
+                "provider": "OpenAI + Neo4j"
+            }
     except Exception as e:
         logger.error(f"Error answering question: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -327,6 +383,81 @@ async def get_authors() -> List[Dict[str, Any]]:
     except Exception as e:
         logger.error(f"Error getting authors: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================
+# Google File Search Specific Endpoints
+# ============================================
+
+class CompareQuery(BaseModel):
+    concept1: str
+    concept2: str
+
+
+class GapAnalysisQuery(BaseModel):
+    concept: str
+
+
+@app.get("/api/google/files")
+async def list_google_files() -> Dict[str, Any]:
+    """List files uploaded to Google File Search."""
+    if not use_google_rag or not hybrid_rag:
+        return {"files": [], "message": "Google File Search not enabled"}
+
+    try:
+        files = hybrid_rag.gfs.list_files()
+        return {
+            "count": len(files),
+            "files": files
+        }
+    except Exception as e:
+        logger.error(f"Error listing Google files: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/google/compare")
+async def compare_concepts_google(query: CompareQuery) -> Dict[str, Any]:
+    """Compare two concepts using Google File Search + Knowledge Graph."""
+    if not use_google_rag or not hybrid_rag:
+        raise HTTPException(status_code=503, detail="Google File Search not enabled")
+
+    try:
+        result = hybrid_rag.compare_concepts(query.concept1, query.concept2)
+        return result
+    except Exception as e:
+        logger.error(f"Error comparing concepts: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/google/gaps")
+async def find_gaps_google(query: GapAnalysisQuery) -> Dict[str, Any]:
+    """Find implementation gaps for a concept using Google File Search."""
+    if not use_google_rag or not hybrid_rag:
+        raise HTTPException(status_code=503, detail="Google File Search not enabled")
+
+    try:
+        result = hybrid_rag.find_implementation_gaps(query.concept)
+        return result
+    except Exception as e:
+        logger.error(f"Error finding gaps: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/system/info")
+async def get_system_info() -> Dict[str, Any]:
+    """Get information about the RAG system configuration."""
+    if use_google_rag and hybrid_rag:
+        stats = hybrid_rag.get_statistics()
+        stats['rag_provider'] = 'Google File Search + Neo4j'
+    elif graphrag:
+        stats = {
+            'rag_provider': 'OpenAI + Neo4j',
+            'knowledge_graph': db.get_schema_info()
+        }
+    else:
+        stats = {'rag_provider': 'None', 'status': 'Not initialized'}
+
+    return stats
 
 
 if __name__ == "__main__":

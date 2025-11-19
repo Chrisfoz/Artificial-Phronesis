@@ -15,11 +15,13 @@ A knowledge graph + GraphRAG system for exploring how wisdom, phronesis, sapienc
 - **Artificial intelligence** (computer science)
 - **Artificial wisdom** and **machine phronesis** (emerging interdisciplinary field)
 
-Using **Neo4j** for graph storage and **GraphRAG** (graph-augmented retrieval) with LLMs, this project enables:
-- ✅ Exploration of conceptual relationships and hierarchies
-- ✅ Citation network analysis across disciplines
-- ✅ Identification of research gaps (under-theorized connections)
-- ✅ Natural language queries over structured + unstructured knowledge
+Using **Neo4j** for graph storage and **Google File Search** (powered by Gemini) for advanced RAG, this project enables:
+- ✅ **Powerful document search** using Google's latest AI models
+- ✅ **Structured knowledge** from Neo4j knowledge graph
+- ✅ **Hybrid RAG** combining graph structure + semantic document retrieval
+- ✅ **Citation network analysis** across disciplines
+- ✅ **Research gap identification** through graph analysis
+- ✅ **Natural language queries** with context-aware answers
 
 ## Why a Knowledge Graph?
 
@@ -54,10 +56,13 @@ A knowledge graph lets us:
 - **Relationships**: `SUBTYPE_OF`, `CONTRASTED_WITH`, `HAS_TRAIT`, `IMPLEMENTS_ASPECT_OF`, etc.
 - **Schema-driven** with constraints and indexes for performance
 
-### 2. GraphRAG Query Engine
-- **Hybrid search**: Combine vector similarity (passages) + graph traversal (concepts)
-- **LLM-powered Q&A**: Ask natural language questions with graph context
-- **Subgraph extraction**: Focus on specific concepts and their neighborhoods
+### 2. Hybrid RAG System
+- **Google File Search**: Advanced document indexing and retrieval using Gemini 1.5 Pro
+- **Knowledge Graph Context**: Enrich queries with conceptual relationships from Neo4j
+- **Dual-mode**: Supports both Google File Search (recommended) and OpenAI embeddings
+- **LLM-powered Q&A**: Ask natural language questions with graph-enhanced context
+- **Concept comparison**: Compare constructs across disciplines
+- **Gap analysis**: Identify under-theorized or unimplemented aspects
 
 ### 3. Interactive Web Interface
 - **Landing page**: Interactive graph visualization (vis.js)
@@ -109,7 +114,8 @@ Artificial-Phronesis/
 ### Prerequisites
 - **Docker** and **Docker Compose** (for Neo4j)
 - **Python 3.9+**
-- **OpenAI API key** (for LLM-based entity extraction and GraphRAG)
+- **Google API key** (for File Search RAG with Gemini) - [Get one here](https://aistudio.google.com/app/apikey)
+- **OpenAI API key** (optional - for entity extraction)
 
 ### 1. Clone the Repository
 
@@ -130,7 +136,9 @@ pip install -r requirements.txt
 
 # Configure environment variables
 cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY
+# Edit .env and add:
+#   - GOOGLE_API_KEY (required for RAG)
+#   - OPENAI_API_KEY (optional for entity extraction)
 ```
 
 ### 3. Start Neo4j Database
@@ -152,18 +160,27 @@ python scripts/init_database.py
 
 This creates the schema, constraints, indexes, and loads seed data (core concepts, traits, architectures).
 
-### 5. Add Papers and Ingest
+### 5. Upload Papers to Google File Search
 
 ```bash
 # Add PDF papers to data/papers/
-# Then run ingestion:
-python scripts/ingest_papers.py
 
-# Optional: Skip embeddings for faster ingestion (no vector search)
-python scripts/ingest_papers.py --no-embeddings
+# Upload to Google File Search (recommended - uses Gemini for RAG)
+make upload-google
+
+# Or manually:
+python scripts/upload_to_google.py
 ```
 
-The ingestion script will:
+This will upload all PDFs to Google's File API for powerful document search.
+
+**Optional**: If you also want entity extraction into Neo4j:
+```bash
+make ingest
+# Or: python scripts/ingest_papers.py
+```
+
+The entity extraction script will:
 1. Extract text from PDFs
 2. Use GPT-4 to extract entities (concepts, traits, architectures)
 3. Extract relationships
@@ -286,11 +303,11 @@ After ingesting papers, you might discover:
 
 ## Technologies
 
-- **Neo4j 5.15**: Graph database with APOC and GDS plugins
+- **Google Gemini 1.5 Pro**: Advanced document RAG with File Search API (primary RAG system)
+- **Neo4j 5.15**: Knowledge graph with APOC and GDS plugins
 - **Python 3.9+**: Core processing logic
-- **FastAPI**: Web backend
-- **OpenAI GPT-4**: Entity extraction and Q&A
-- **Sentence Transformers**: Local embeddings (optional)
+- **FastAPI**: Web backend with async support
+- **OpenAI GPT-4**: Optional for entity extraction
 - **Vis.js**: Interactive graph visualization
 - **PyMuPDF / pdfplumber**: PDF text extraction
 
