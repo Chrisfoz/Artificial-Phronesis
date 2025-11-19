@@ -1,0 +1,14 @@
+# Place your PDF papers here
+
+This directory should contain academic papers related to:
+- Wisdom (psychology)
+- Phronesis (philosophy)
+- Artificial Intelligence
+- Artificial Wisdom
+- Machine Learning
+- Computational Sapience
+
+After adding PDFs, run:
+```bash
+python scripts/ingest_papers.py
+```

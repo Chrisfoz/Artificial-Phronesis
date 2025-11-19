@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}References - Artificial Phronesis{% endblock %}
+
+{% block content %}
+<div class="container content-page">
+    <h2>References</h2>
+
+    <section class="references-intro">
+        <p>
+            This page lists all academic papers, books, and resources included in the
+            Artificial Phronesis knowledge graph. Papers are dynamically loaded from
+            the graph database.
+        </p>
+    </section>
+
+    <section class="filter-section">
+        <div class="control-group">
+            <label for="domain-filter">Filter by Domain:</label>
+            <select id="domain-filter">
+                <option value="all">All</option>
+                <option value="psychology">Psychology</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="AI">AI & Computer Science</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <input type="text" id="search-papers" placeholder="Search papers..." />
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <p id="paper-stats">Loading papers...</p>
+    </section>
+
+    <section id="papers-list" class="papers-list">
+        <!-- Papers will be loaded dynamically -->
+    </section>
+
+    <section class="authors-section">
+        <h3>Key Authors</h3>
+        <div id="authors-list" class="authors-grid">
+            <!-- Authors will be loaded dynamically -->
+        </div>
+    </section>
+
+    <section class="foundational-works">
+        <h3>Foundational Works</h3>
+        <p>Key papers that define the core concepts in this knowledge graph:</p>
+
+        <div class="paper">
+            <h4>Jeste, D. V., Lee, E. E., & Cassidy, C. (2020). Beyond artificial intelligence: exploring artificial wisdom.</h4>
+            <p><em>International Psychogeriatrics, 32</em>(8), 993-1001.</p>
+            <p>Proposes extending AI beyond performance intelligence toward wisdom capacities including emotional regulation, pro-social orientation, and ethical behavior.</p>
+        </div>
+
+        <div class="paper">
+            <h4>Grossmann, I., & Johnson, S. (2025). Imagining and building wise machines.</h4>
+            <p>Discusses operationalizing wisdom in AI systems, emphasizing metacognition, perspective-taking, and intellectual humility.</p>
+        </div>
+
+        <div class="paper">
+            <h4>McGregor, S. (2025). The Philosophy of Artificial Wisdom.</h4>
+            <p>Philosophical analysis of artificial wisdom vs. artificial phronesis, examining their relationship to AGI and consciousness.</p>
+        </div>
+
+        <div class="paper">
+            <h4>Tsai, C. (n.d.). The Possibility of Artificial Phronesis.</h4>
+            <p>Seven-stage framework for practical wisdom, analyzing whether machines can achieve phronetic excellence.</p>
+        </div>
+
+        <div class="paper">
+            <h4>Schmidhuber, J., et al. (2024). Darwin Gödel Machines.</h4>
+            <p><em>arXiv:2410.06087</em></p>
+            <p>Self-improving AI using proof search and population-based evolution—a step toward open-ended machine intelligence.</p>
+        </div>
+
+        <div class="paper">
+            <h4>Lu, C., et al. (2024). The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery.</h4>
+            <p>Automated research system demonstrating metacognitive capabilities through self-review and idea generation.</p>
+        </div>
+    </section>
+
+    <section class="citation-note">
+        <h3>How to Cite This Project</h3>
+        <div class="citation-box">
+            <p>
+                <strong>APA:</strong><br>
+                Artificial Phronesis Knowledge Graph. (2024). Retrieved from https://github.com/Chrisfoz/Artificial-Phronesis
+            </p>
+            <p>
+                <strong>BibTeX:</strong>
+            </p>
+            <pre>
+@misc{artificial-phronesis-2024,
+  title={Artificial Phronesis: A Knowledge Graph of Wisdom and Intelligence},
+  author={},
+  year={2024},
+  howpublished={\url{https://github.com/Chrisfoz/Artificial-Phronesis}}
+}
+            </pre>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="/static/js/references.js"></script>
+{% endblock %}

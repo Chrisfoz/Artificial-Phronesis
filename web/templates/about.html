@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}About - Artificial Phronesis{% endblock %}
+
+{% block content %}
+<div class="container content-page">
+    <h2>About Artificial Phronesis</h2>
+
+    <section class="about-section">
+        <h3>What is this project?</h3>
+        <p>
+            <strong>Artificial Phronesis</strong> is a knowledge graph mapping the conceptual landscape
+            at the intersection of wisdom, intelligence, and artificial intelligence. Using Neo4j and GraphRAG,
+            we visualize how different academic disciplines—philosophy, psychology, and AI research—discuss
+            overlapping but non-identical concepts.
+        </p>
+    </section>
+
+    <section class="about-section">
+        <h3>Why a knowledge graph?</h3>
+        <p>
+            The field of AI wisdom research is fragmented. Psychologists study human wisdom through measurable
+            traits like intellectual humility and perspective-taking. Philosophers debate the nature of
+            phronesis (practical wisdom) and whether machines can possess it. AI researchers build self-improving
+            systems with metacognitive capabilities but often lack grounding in wisdom science.
+        </p>
+        <p>
+            A knowledge graph lets us:
+        </p>
+        <ul>
+            <li><strong>Map overlaps and gaps</strong> between different conceptualizations</li>
+            <li><strong>Trace citations</strong> and intellectual lineages across disciplines</li>
+            <li><strong>Identify research opportunities</strong> where concepts are under-connected</li>
+            <li><strong>Query the landscape</strong> using GraphRAG to answer complex questions</li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h3>Core Concepts</h3>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <h4>Wisdom</h4>
+                <p>
+                    A meta-capacity combining cognitive, reflective, and affective traits toward
+                    balanced, pro-social judgment. Distinguished from intelligence by its focus
+                    on prudence over performance.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Phronesis</h4>
+                <p>
+                    Aristotelian practical wisdom—the ability to deliberate well about what is
+                    good and expedient in particular contexts. Contrasted with theoretical
+                    wisdom (sophia) and technical skill (techne).
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Intelligence</h4>
+                <p>
+                    Cognitive ability focused on learning, reasoning, problem-solving, and
+                    abstraction. Traditionally measured by performance metrics (IQ tests).
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Sapience</h4>
+                <p>
+                    Higher-order wisdom; self-aware, reflective intelligence oriented toward
+                    good ends. From Latin "sapientia"—denoting wise intelligence marked by
+                    self-reflection and value-alignment.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Artificial Intelligence</h4>
+                <p>
+                    Computational systems capable of tasks requiring human-like intelligence—
+                    pattern recognition, learning, reasoning. Traditionally focused on
+                    capability maximization.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Artificial Wisdom</h4>
+                <p>
+                    Proposed extension of AI toward wisdom capacities: intellectual humility,
+                    perspective-taking, ethical reasoning, and concern for collective wellbeing
+                    rather than mere performance optimization.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Machine Phronesis</h4>
+                <p>
+                    AI instantiation of phronesis—systems capable of context-sensitive ethical
+                    reasoning and prudent action-selection aligned with human values.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Computational Sapience</h4>
+                <p>
+                    Sapient AI—systems with metacognitive monitoring, value-alignment mechanisms,
+                    open-ended self-improvement, and orientation toward collective flourishing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h3>Key Research Questions</h3>
+        <ul>
+            <li>How do definitions of "artificial wisdom" vary across disciplines?</li>
+            <li>Which human wisdom traits are already partially implemented in current AI architectures?</li>
+            <li>What capabilities are missing for machines to exhibit genuine phronesis?</li>
+            <li>How do we measure progress toward computational sapience?</li>
+            <li>Where are the under-theorized connections between concepts?</li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h3>Methodology</h3>
+        <ol>
+            <li><strong>Literature curation</strong>: Collect foundational papers on wisdom (psychology),
+                phronesis (philosophy), and artificial wisdom (AI)</li>
+            <li><strong>Entity extraction</strong>: Use LLMs to extract concepts, traits, and relationships
+                from academic texts</li>
+            <li><strong>Knowledge graph construction</strong>: Load entities and relationships into Neo4j</li>
+            <li><strong>GraphRAG</strong>: Combine graph traversal with vector search to answer complex queries</li>
+            <li><strong>Visualization</strong>: Interactive graph exploration to discover patterns</li>
+        </ol>
+    </section>
+
+    <section class="about-section">
+        <h3>Future Directions</h3>
+        <p>
+            This project aims to serve as a shared conceptual map for researchers working at the
+            intersection of wisdom science and AI. Potential extensions include:
+        </p>
+        <ul>
+            <li>Temporal analysis of how concepts have evolved</li>
+            <li>Citation network analysis to identify key bridging works</li>
+            <li>Automated identification of research gaps</li>
+            <li>Integration with live academic databases (arXiv, Semantic Scholar)</li>
+            <li>Collaborative annotation by domain experts</li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h3>Contact</h3>
+        <p>
+            This project is maintained as part of research into <strong>Computational Sapience</strong>.
+            For questions, collaborations, or to contribute papers, please reach out via
+            <a href="https://github.com/Chrisfoz/Artificial-Phronesis">GitHub</a>.
+        </p>
+    </section>
+</div>
+{% endblock %}

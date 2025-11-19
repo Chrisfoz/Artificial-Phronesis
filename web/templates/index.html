@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Artificial Phronesis - Interactive Knowledge Graph{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <h2>Explore the Knowledge Graph</h2>
+        <p>
+            This interactive visualization maps the conceptual relationships between
+            <strong>Wisdom</strong>, <strong>Phronesis</strong>, <strong>Intelligence</strong>,
+            <strong>Artificial Intelligence</strong>, <strong>Artificial Wisdom</strong>,
+            and <strong>Computational Sapience</strong>.
+        </p>
+        <p>
+            Navigate the graph below to discover how these fractured constructs hold together
+            across philosophy, psychology, and AI research.
+        </p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3 id="concept-count">-</h3>
+            <p>Concepts</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="relationship-count">-</h3>
+            <p>Relationships</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="paper-count">-</h3>
+            <p>Papers</p>
+        </div>
+    </section>
+
+    <section class="graph-controls">
+        <div class="control-group">
+            <label for="concept-select">Focus on Concept:</label>
+            <select id="concept-select">
+                <option value="">-- Full Graph --</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <button id="reset-graph" class="btn">Reset View</button>
+            <button id="toggle-physics" class="btn">Toggle Physics</button>
+        </div>
+    </section>
+
+    <section class="graph-container">
+        <div id="knowledge-graph"></div>
+    </section>
+
+    <section class="query-section">
+        <h3>Ask a Question</h3>
+        <div class="query-form">
+            <input
+                type="text"
+                id="question-input"
+                placeholder="e.g., How does artificial wisdom differ from artificial intelligence?"
+            />
+            <button id="ask-btn" class="btn btn-primary">Ask</button>
+        </div>
+        <div id="answer-container" style="display: none;">
+            <h4>Answer:</h4>
+            <div id="answer-text"></div>
+        </div>
+        <div id="loading" style="display: none;">
+            <p>Thinking...</p>
+        </div>
+    </section>
+
+    <section class="concept-details" id="concept-details" style="display: none;">
+        <h3 id="detail-name"></h3>
+        <p id="detail-description"></p>
+
+        <div id="detail-traits" style="display: none;">
+            <h4>Traits:</h4>
+            <ul id="traits-list"></ul>
+        </div>
+
+        <div id="detail-papers" style="display: none;">
+            <h4>Discussed in Papers:</h4>
+            <ul id="papers-list"></ul>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="/static/js/graph.js"></script>
+{% endblock %}
