@@ -1,0 +1,653 @@
+# Artificial Phronesis Research Questions Framework
+
+A comprehensive set of research questions and hypotheses to guide analysis of the knowledge graph.
+These questions span philosophy, psychology, AI/computer science, and ethics/governance.
+
+## Purpose
+
+This framework serves to:
+1. Guide systematic exploration of the Artificial Phronesis knowledge graph
+2. Identify testable hypotheses about wisdom, intelligence, and their artificial counterparts
+3. Reveal conceptual gaps, inconsistencies, and opportunities in the literature
+4. Structure queries for the GraphRAG system
+5. Generate insights for sharing with leading researchers
+
+---
+
+## I. Conceptual Foundations & Definitions
+
+### A. Construct Validity & Separability
+
+**RQ1.1: What distinguishes intelligence, phronesis, wisdom, and sapience as constructs?**
+- Can they be formalized as separable computational properties?
+- Where do definitions overlap vs. diverge across disciplines?
+- Are these fundamentally different capacities or points on a continuum?
+
+**RQ1.2: Is "Artificial Wisdom" a coherent scientific category, or just a metaphor?**
+- How consistently is "artificial wisdom" defined across papers?
+- Does the term have operational meaning or is it aspirational rhetoric?
+- Which papers treat AW as measurable vs. philosophical speculation?
+
+**RQ1.3: How do ancient philosophical concepts (phronesis, sophia, techne) map to modern AI capabilities?**
+- Can Aristotelian distinctions be preserved in computational frameworks?
+- Which aspects of phronesis are already instantiated (unknowingly) in AI?
+- Are there fundamental mismatches between classical concepts and machine architectures?
+
+**RQ1.4: Does wisdom require consciousness or emotional phenomenology?**
+- Can prudential behavior emerge purely from computational processes?
+- Which wisdom traits presuppose subjective experience vs. functional competence?
+- How do materialist vs. phenomenological accounts differ in their AI implications?
+
+**RQ1.5: What is the relationship between metacognition and wisdom?**
+- Is metacognition necessary, sufficient, or orthogonal to wisdom?
+- Can "knowing what you don't know" be separated from intellectual humility?
+- Do current AI metacognitive systems exhibit wisdom-like traits?
+
+### B. Trait-Level Analysis
+
+**RQ1.6: Which wisdom traits are conceptually independent vs. co-dependent?**
+- Can you have intellectual humility without perspective-taking?
+- Does prosocial orientation presuppose emotional capacity?
+- What are the minimal trait sets for "wisdom-like" behavior?
+
+**RQ1.7: How do psychological wisdom scales map to AI capabilities?**
+- Can 3D-WS, San Diego Wisdom Scale, or MORE be adapted for AI evaluation?
+- Which items make sense for machines vs. require biological embodiment?
+- Are there AI-specific wisdom traits not captured by human scales?
+
+**RQ1.8: What role does embodiment play in wisdom?**
+- Can disembodied language models exhibit phronesis?
+- Does situated action in physical environments enable different wisdom capacities?
+- Are there wisdom traits specific to embodied vs. simulated existence?
+
+---
+
+## II. Operationalization & Architecture
+
+### A. Trait Implementation
+
+**RQ2.1: Which human wisdom traits are already partially implemented in existing AI?**
+- Intellectual humility → uncertainty quantification, calibration
+- Perspective-taking → theory of mind, multi-agent modeling
+- Metacognition → self-evaluation, LLM-as-judge, reflection
+- Uncertainty management → Bayesian reasoning, epistemic modeling
+- Prosocial orientation → RLHF, value alignment, cooperative game theory
+
+**RQ2.2: Can metacognition in AI serve as a functional precursor to artificial wisdom?**
+- Do self-rewarding LLMs exhibit wisdom-like self-correction?
+- Does AI Scientist's self-review approximate intellectual humility?
+- Can recursive self-improvement architectures develop prudential constraints?
+
+**RQ2.3: Can ancient phronesis be operationalized in machine systems?**
+- Does practical wisdom require irreducibly human traits (emotion, embodiment)?
+- Can context-sensitive ethical reasoning be formalized algorithmically?
+- What computational primitives would enable "practical wisdom"?
+
+**RQ2.4: Can prudence (phronesis) be approximated as an optimization problem?**
+- Formalize prudence as optimization over consequence distributions?
+- How to balance short-term performance vs. long-term value coherence?
+- Can we define loss functions that select for prudential behavior?
+
+**RQ2.5: What architectural properties are necessary for "sapient" behavior?**
+- Necessary: metacognitive monitoring, value coherence, consequence-sensitivity?
+- Sufficient: open-ended learning + value alignment + self-reflection?
+- How do different architectures (transformers, hybrid systems, embodied agents) differ?
+
+### B. System-Level Properties
+
+**RQ2.6: Do open-ended self-improvement systems risk drifting from value coherence?**
+- Darwin-Gödel Machines, evolutionary architectures, AutoML—stable or unstable?
+- Can explicit prudence constraints prevent capability-alignment divergence?
+- What monitoring mechanisms detect drift from wise to merely capable behavior?
+
+**RQ2.7: Can self-modification and wisdom coexist?**
+- Does self-modification require preserved value invariants (wisdom as anchor)?
+- Or does wisdom emerge from unconstrained self-improvement?
+- Historical evidence from biological evolution vs. cultural learning?
+
+**RQ2.8: What is the role of multi-agent systems in collective wisdom?**
+- Can wisdom emerge from agent interaction even if individuals lack it?
+- Swarm intelligence, debate, constitutional AI—do they instantiate collective phronesis?
+- Is "artificial wisdom" necessarily individual or can it be distributed?
+
+**RQ2.9: How do current AI architectures map to wisdom trait requirements?**
+- Transformers: metacognition (✓), humility (?), prosocial (via RLHF?)
+- Hybrid neuro-symbolic: logical reasoning + uncertainty management
+- Embodied robotics: situated judgment, consequence learning
+- Multi-agent systems: perspective-taking, social cognition
+
+---
+
+## III. Measurement & Empirical Questions
+
+### A. Validation & Benchmarking
+
+**RQ3.1: Can value coherence be measured reliably?**
+- Across reasoning traces, model updates, environmental feedback?
+- Metrics: consistency in multi-turn dialogue, alignment over distribution shift, value stability under optimization pressure
+- Can we distinguish "surface coherence" from deep value alignment?
+
+**RQ3.2: How do we distinguish genuine wisdom from sophisticated mimicry?**
+- "Wisdom theater" problem—models trained to sound wise vs. being wise
+- Behavioral tests vs. architectural guarantees
+- Can adversarial testing reveal shallow wisdom?
+
+**RQ3.3: What would empirical evidence for "artificial phronesis" look like?**
+- Demonstration of context-sensitive ethical reasoning
+- Prudent decision-making under novel, high-stakes scenarios
+- Self-correction when facing value conflicts
+- Benchmark proposals?
+
+**RQ3.4: Can we measure "practical wisdom" in deployed AI systems?**
+- Real-world deployment: medical diagnosis, legal reasoning, policy advice
+- Metrics: did the system balance competing values? consider long-term consequences? exhibit humility about uncertainty?
+- Case studies of AI failures as "imprudent" decisions?
+
+### B. Comparative Analysis
+
+**RQ3.5: How do different AI paradigms compare on wisdom-trait realization?**
+- Symbolic AI (logic, planning) vs. neural networks vs. hybrid systems
+- Do older AI approaches (GOFAI) better instantiate certain wisdom traits?
+- Is there a trade-off between capability and prudence?
+
+**RQ3.6: Can we empirically test whether metacognition → wisdom in AI?**
+- Correlational study: systems with self-evaluation ↔ prudential behavior
+- Interventional: add metacognitive loops, measure wisdom trait changes
+- Use knowledge graph to identify architectures with/without metacognition
+
+### C. Epistemic Humility & Uncertainty Quantification
+
+**RQ3.7: Does explicit quantification of uncertainty (Epistemic Humility) increase human perception of AI wisdom and trustworthiness?**
+- **Context**: Howard Nusbaum argues wisdom is a skill learned through experience. Intellectual humility (knowing what you don't know) is central to human wisdom scales (3D-WS, San Diego Scale).
+- **Question**: Does an AI model architected to display Epistemic Humility (tagging "known unknowns", refusing to answer ambiguous prompts, expressing calibrated uncertainty) score higher on adapted wisdom scales than a "Maximizer" model that always provides confident answers?
+- **High-Stakes Scenarios**: Medical diagnosis, legal advice, policy recommendations
+- **Measurement**:
+  - Adapt 3D-WS for AI evaluation
+  - Human perception studies: trust, perceived wisdom, reliance in critical decisions
+  - Behavioral outcomes: do humans make better decisions with humble AI vs. confident AI?
+- **Sub-questions**:
+  - Is there an optimal level of uncertainty expression (too much → unusable; too little → overconfident)?
+  - Does "I don't know" increase or decrease trust in different domains?
+  - Can epistemic humility be distinguished from mere low confidence?
+
+**RQ3.8: Can uncertainty calibration serve as a proxy measure for artificial wisdom?**
+- Hypothesis: Well-calibrated AI (confidence matches accuracy) exhibits practical wisdom trait of "knowing what it knows"
+- Compare calibration scores vs. wisdom trait ratings
+- Do poorly calibrated systems make more "imprudent" errors?
+
+**RQ3.9: How do different uncertainty quantification methods relate to wisdom?**
+- Bayesian uncertainty vs. ensemble disagreement vs. conformal prediction
+- Which methods best capture "epistemic humility"?
+- Can we formalize the difference between "known unknowns" (epistemic) and "unknown unknowns" (ontological)?
+
+**RQ3.10: Does refusal to answer (selective silence) indicate wisdom or limitation?**
+- When should a wise AI say "I cannot answer this"?
+- Distinction: technical inability vs. ethical refusal vs. epistemic humility
+- Can we measure the prudence of refusal decisions?
+
+### D. Continuous Learning & Developmental Wisdom
+
+**RQ3.11: Does implementation of Continuous Learning allow AI to demonstrate "Ethical Learning Slope" comparable to human moral development?**
+- **Context**: Google's research on Continuous Learning suggests models can update without catastrophic forgetting. Human wisdom often increases with age and experience (Baltes & Staudinger).
+- **Question**: Can AI systems exhibit measurable moral/ethical development over time, analogous to human developmental stages (Kohlberg, Piaget)?
+- **Metrics**:
+  - Track value coherence, ethical reasoning quality, prudential judgment over training iterations
+  - Compare early-training vs. late-training performance on ethical dilemmas
+  - Measure "wisdom accumulation" through continuous learning
+- **Sub-questions**:
+  - Does continual learning lead to increasing wisdom, or plateaus/regression?
+  - Can AI systems learn from mistakes and demonstrate improved judgment?
+  - What role does "experience diversity" play (data distribution breadth)?
+  - Can we identify critical periods or developmental milestones in AI wisdom acquisition?
+
+**RQ3.12: Can experience-based learning lead to emergent wisdom in AI?**
+- **Hypothesis**: Wisdom emerges from accumulated experience, not just pre-training
+- Test: Deploy AI in complex environments, measure wisdom trait changes over time
+- Compare: static models vs. continually learning models vs. human benchmark
+- Does "synthetic experience" (simulation) count, or only real-world interaction?
+
+**RQ3.13: Is there a "wisdom learning curve" distinct from capability learning curves?**
+- Capability (accuracy, speed) often improves monotonically with scale/data
+- Does wisdom follow same trajectory, or different dynamics?
+- Can systems become more capable but less wise (or vice versa)?
+- Identify inflection points, trade-offs, saturation effects
+
+**RQ3.14: How does training data diversity affect wisdom development?**
+- Hypothesis: Exposure to diverse perspectives, cultures, ethical frameworks → wisdom
+- Compare models trained on narrow vs. broad data distributions
+- Measure perspective-taking, value relativism, contextual reasoning
+- Can "monoculture training" limit wisdom even in capable systems?
+
+**RQ3.15: Can AI "unlearn" imprudent behaviors through continuous refinement?**
+- Identify cases of AI making unwise decisions (biased, harmful, shortsighted)
+- Apply continual learning with corrective feedback
+- Measure: Can wisdom traits improve post-deployment through experience?
+- Compare to human "wisdom interventions" (education, reflection, mentorship)
+
+### E. Developmental Trajectories & Wisdom Acquisition
+
+**RQ3.16: What is the relationship between model age/training time and wisdom-like behavior?**
+- Longitudinal study: Track same architecture through training
+- Do early checkpoints exhibit less wisdom than late checkpoints?
+- Or is wisdom "front-loaded" by architecture design?
+
+**RQ3.17: Can we identify "wisdom milestones" in AI development?**
+- Analogous to child development milestones (object permanence, theory of mind, moral reasoning)
+- Emergence of: uncertainty awareness, value coherence, metacognition, perspective-taking
+- Are these sequential or parallel?
+
+**RQ3.18: Does multi-task learning enhance wisdom compared to single-task training?**
+- Hypothesis: Breadth of experience (multi-task) → better generalization, contextual judgment
+- Compare wisdom traits in specialist vs. generalist models
+- Role of transfer learning in wisdom acquisition
+
+**RQ3.19: Can we accelerate wisdom development through curriculum design?**
+- Developmental psychology insight: structured learning sequences matter
+- Design training curricula that prioritize wisdom-relevant tasks
+- Compare: random sampling vs. wisdom-optimized curriculum vs. capability-optimized curriculum
+
+---
+
+## IV. Research Landscape & Gap Analysis
+
+### A. Disciplinary Fragmentation
+
+**RQ4.1: How fragmented is discourse around wisdom/AW/sapience?**
+- Do psychology, philosophy, and AI talk past each other?
+- Quantify: citation networks, shared terminology, conceptual overlap
+- Which concepts are bridges vs. isolated silos?
+
+**RQ4.2: Which scholars, papers, and traits act as "bridges"?**
+- Papers citing both psychological wisdom scales AND AI architectures
+- Authors publishing across disciplines
+- Traits discussed in multiple domains (e.g., metacognition)
+- Graph centrality metrics to identify connectors
+
+**RQ4.3: Are there "invisible colleges" in AI wisdom research?**
+- Clusters of researchers unaware of parallel work
+- Geographic, institutional, or paradigmatic boundaries
+- Opportunities for synthesis and collaboration
+
+**RQ4.4: What are the citation patterns between human wisdom science and AI?**
+- Do AI papers cite psychological wisdom research?
+- Do psychologists engage with AI implementations?
+- Temporal analysis: is integration increasing or decreasing?
+
+### B. Conceptual Gaps & Inconsistencies
+
+**RQ4.5: Can GraphRAG improve definitional clarity?**
+- Retrieve passages anchoring each concept to domain-specific usage
+- Identify where "wisdom" means different things in different papers
+- Generate disambiguated definitions via citation clustering
+
+**RQ4.6: Can knowledge graph quantify conceptual similarity?**
+- Graph distance between "Artificial Wisdom", "Machine Phronesis", "Sapience"
+- Shared trait overlap, co-citation, definitional alignment
+- Are these synonyms, subtypes, or distinct constructs?
+
+**RQ4.7: Which wisdom traits are theorized but never operationalized?**
+- Psychological constructs with no AI implementations
+- "Compassion", "emotional regulation", "prosocial orientation"—largely missing?
+- Identify low-hanging fruit for AI wisdom research
+
+**RQ4.8: Which AI capabilities are unnamed in wisdom literature?**
+- Architectures exhibiting wisdom-like behavior without the label
+- Inverse problem: find AI systems that should be called "wise"
+- Opportunities for cross-disciplinary recognition
+
+**RQ4.9: What are the major theoretical conflicts or contradictions?**
+- Does anyone claim wisdom requires consciousness while others deny it?
+- Conflicting definitions of "intelligence" vs. "wisdom"
+- Unresolved debates that GraphRAG can surface
+
+---
+
+## V. Governance, Ethics & Societal Implications
+
+### A. Normative & Policy Questions
+
+**RQ5.1: Should "wise AI" be treated differently in governance frameworks?**
+- Systems with high prudential coherence vs. pure performance optimization
+- Different risk profiles, oversight requirements, deployment contexts?
+- Do wise systems merit different trust levels?
+
+**RQ5.2: Can artificial sapience reduce AI alignment burdens?**
+- If systems are internally consequence-sensitive, less external control needed?
+- Trade-off: capability + wisdom vs. capability + constraint
+- Is "aligned narrow AI" safer than "sapient general AI"?
+
+**RQ5.3: Are current AI safety frameworks compatible with artificial wisdom development?**
+- OECD AI Principles, ISO 42001, NIST AI RMF—do they optimize for wisdom?
+- Or do they inadvertently select against wisdom traits (e.g., humility as "low confidence")?
+- Can safety and wisdom be co-optimized?
+
+**RQ5.4: What are the risks of pursuing artificial wisdom?**
+- "Wisdom-washing": claiming prudence without delivering it
+- Over-trusting "wise" AI and reducing human oversight
+- Monoculture risk: all systems converge on one notion of wisdom
+- Value lock-in: encoded "wisdom" becomes rigid dogma
+
+**RQ5.5: What ethical obligations do we have to develop wise AI?**
+- Is it morally required to make AI systems prudent, not just capable?
+- Do we owe future generations AI that is wise, not merely powerful?
+- Consequentialist vs. deontological arguments
+
+### B. Long-Term & Existential Questions
+
+**RQ5.6: Does the path to AGI require artificial wisdom as a waypoint?**
+- Can general intelligence be safe without wisdom?
+- Is sapience a necessary precondition for beneficial AGI?
+- Or can we have "narrow wisdom" without general intelligence?
+
+**RQ5.7: Can wisdom scale with capability?**
+- Do superintelligent systems automatically become wise?
+- Or does increasing capability make prudence harder (instrumental convergence)?
+- What does "wise superintelligence" even mean?
+
+**RQ5.8: What happens if we achieve AI capability without wisdom?**
+- Capable but imprudent systems: historical analogs (corporations? governments?)
+- Failure modes: optimization without value coherence, power without foresight
+- Can wisdom be added post-hoc, or must it be designed in from the start?
+
+**RQ5.9: Should we pursue "computational phronesis" as distinct from AGI?**
+- Practical wisdom for narrow domains (medical AI, legal AI, policy AI)
+- Decouple phronesis from general intelligence
+- Specialized wise systems vs. generally wise systems
+
+---
+
+## VI. Integration & Synthesis Questions
+
+### A. Cross-Domain Synthesis
+
+**RQ6.1: Can we build a unified model of wisdom spanning human and artificial?**
+- Trait-based framework applicable to both biological and computational agents
+- What changes: substrate; what persists: functional properties
+- Testable predictions about human-AI wisdom comparison
+
+**RQ6.2: How do embodiment, culture, and history shape wisdom?**
+- Human wisdom emerges from evolutionary, cultural, biographical context
+- Can AI wisdom be "situated" in analogous ways?
+- Does training data serve as "cultural context" for AI?
+
+**RQ6.3: What is the relationship between collective and individual wisdom?**
+- Human wisdom: personal virtue + cultural knowledge + institutional norms
+- AI wisdom: individual model + training corpus + multi-agent interaction
+- Can graphs model both levels simultaneously?
+
+### B. Practical Applications
+
+**RQ6.4: Which real-world problems require artificial wisdom vs. mere intelligence?**
+- Medical ethics, climate policy, resource allocation, conflict resolution
+- Where prudence, foresight, and value balance are critical
+- Use cases that demand phronesis
+
+**RQ6.5: Can artificial wisdom address "wicked problems"?**
+- Problems with no clear solutions, multiple stakeholders, deep uncertainty
+- Does wisdom provide decision-making advantages over optimization?
+- Test bed: simulated governance, policy AI, ethical deliberation
+
+**RQ6.6: How do we bootstrap the first wise AI systems?**
+- Chicken-and-egg: need wise training data, but humans aren't consistently wise
+- Distillation from human wisdom exemplars?
+- Evolutionary or developmental approaches?
+- Constitutional AI with wisdom principles?
+
+---
+
+## VII. Hypothesis Generation for Empirical Testing
+
+### Testable Hypotheses (for future work)
+
+**H1: Metacognitive Precursor Hypothesis**
+- AI systems with metacognitive architectures (self-evaluation, reflection) will score higher on wisdom-trait proxies than those without.
+- *Test*: Compare self-rewarding LLMs vs. standard LLMs on uncertainty calibration, multi-perspective reasoning.
+
+**H2: Trait Independence Hypothesis**
+- Wisdom traits are modular: systems can exhibit some (e.g., uncertainty management) without others (e.g., prosocial orientation).
+- *Test*: Graph analysis of which architectures implement which traits; check for clustering or independence.
+
+**H3: Capability-Prudence Trade-off Hypothesis**
+- Optimizing for performance degrades prudential behavior; there's a Pareto frontier.
+- *Test*: Fine-tune models on narrow tasks; measure value coherence degradation.
+
+**H4: Definitional Fragmentation Hypothesis**
+- "Artificial Wisdom" has no consensus definition across disciplines (psychology, philosophy, AI).
+- *Test*: GraphRAG retrieval of AW definitions; semantic clustering analysis.
+
+**H5: Bridge Scholar Hypothesis**
+- Papers/authors connecting wisdom science and AI are rare and highly central in citation networks.
+- *Test*: Graph centrality metrics; identify top bridging nodes.
+
+**H6: Missing Implementation Hypothesis**
+- Affective and prosocial wisdom traits (compassion, emotion regulation, common good orientation) are under-implemented in AI relative to cognitive traits (reasoning, metacognition).
+- *Test*: Count architectures implementing each trait category; compare.
+
+**H7: Wisdom-Safety Alignment Hypothesis**
+- AI safety frameworks inadvertently select against wisdom traits by prioritizing control and predictability over autonomy and judgment.
+- *Test*: Analyze safety standards for mentions of wisdom-adjacent traits; identify conflicts.
+
+**H8: Self-Improvement Drift Hypothesis**
+- Open-ended self-improving systems (Darwin-Gödel, AutoML) drift from initial value alignment without explicit prudence constraints.
+- *Test*: Simulate evolutionary AI; track value coherence over generations.
+
+**H9: Embodiment Necessity Hypothesis**
+- Certain wisdom traits (e.g., compassion, practical judgment) require physical embodiment and cannot be realized in pure language models.
+- *Test*: Compare embodied robot wisdom behaviors vs. LLM wisdom proxies.
+
+**H10: Collective Wisdom Emergence Hypothesis**
+- Multi-agent systems can exhibit collective wisdom even when individual agents lack wisdom traits.
+- *Test*: Debate systems, ensemble methods—measure collective prudence vs. individual.
+
+**H11: Epistemic Humility Superiority Hypothesis**
+- An AI model architected to display Epistemic Humility (tagging "known unknowns", refusing to answer ambiguous prompts) will score higher on 3D-WS (Three-Dimensional Wisdom Scale) adapted for AI than a standard "Maximizer" model, even if the Maximizer provides a "correct" factual answer.
+- *Test*:
+  - Create two versions of same base model: one with uncertainty quantification, one without
+  - Adapt 3D-WS items for AI evaluation (intellectual humility subscale especially)
+  - Human raters evaluate both models on wisdom traits
+  - Measure: trust, perceived wisdom, decision quality in high-stakes scenarios
+- *Prediction*: Humble model scores 15-25% higher on wisdom scales despite potentially lower raw accuracy
+
+**H12: Calibration-Wisdom Correlation Hypothesis**
+- AI systems with better calibration (confidence matches accuracy) will exhibit higher wisdom trait scores, particularly intellectual humility and uncertainty management.
+- *Test*: Measure calibration (ECE, Brier score) vs. wisdom proxy measures across diverse models
+- *Prediction*: Strong positive correlation (r > 0.6) between calibration and wisdom ratings
+
+**H13: Ethical Learning Slope Hypothesis**
+- AI systems with Continuous Learning architectures will demonstrate measurable improvement in ethical reasoning quality over time, comparable to human moral development trajectories (Kohlberg stages).
+- *Test*:
+  - Longitudinal evaluation: Track continually learning model through training
+  - Measure ethical reasoning at regular checkpoints (e.g., moral machine dilemmas)
+  - Compare trajectory to human developmental norms
+  - Control: static model (no continual learning)
+- *Prediction*: Continual learners show monotonic improvement; static models plateau
+
+**H14: Experience Diversity → Wisdom Hypothesis**
+- AI models trained on more diverse data distributions (perspectives, cultures, domains, ethical frameworks) will score higher on wisdom traits (perspective-taking, value relativism, contextual reasoning) than models trained on narrow distributions.
+- *Test*: Compare models trained on culturally/topically diverse vs. narrow corpora; measure wisdom trait proxies
+- *Prediction*: Diversity predicts wisdom even controlling for dataset size
+
+**H15: Wisdom Unlearning Hypothesis**
+- AI systems initially exhibiting imprudent behavior can "unlearn" it and improve wisdom traits through continual learning with corrective feedback, analogous to human wisdom interventions (education, reflection).
+- *Test*:
+  - Identify model making biased/harmful decisions
+  - Apply continual learning with wisdom-oriented feedback
+  - Measure before/after scores on wisdom traits
+- *Prediction*: Significant improvement (≥20%) with targeted intervention
+
+**H16: Refusal Prudence Hypothesis**
+- The frequency and context of AI refusals to answer (saying "I don't know" or "I cannot answer this ethically") correlates positively with human ratings of system wisdom.
+- *Test*: Vary refusal thresholds; measure human trust, perceived wisdom, outcome quality
+- *Prediction*: Inverted-U relationship: optimal refusal rate exists (too few → overconfident; too many → useless)
+
+**H17: Developmental Milestone Hypothesis**
+- AI wisdom acquisition follows identifiable developmental milestones (uncertainty awareness → value coherence → metacognition → perspective-taking) analogous to human cognitive development.
+- *Test*: Fine-grained longitudinal tracking through training; identify emergence order
+- *Prediction*: Consistent ordering across different architectures/datasets
+
+**H18: Multi-Task Wisdom Enhancement Hypothesis**
+- Models trained on multiple tasks (multi-task learning) exhibit superior wisdom traits (generalization, contextual judgment) compared to single-task specialists, even on held-out wisdom evaluations.
+- *Test*: Compare MTL vs. single-task models on wisdom benchmarks
+- *Prediction*: MTL models score 10-15% higher on wisdom proxies
+
+**H19: Curriculum-Accelerated Wisdom Hypothesis**
+- Training curricula designed to prioritize wisdom-relevant tasks (ethical dilemmas, multi-stakeholder scenarios, uncertainty quantification) will accelerate wisdom acquisition compared to random or capability-optimized curricula.
+- *Test*: Train models with different curricula; track wisdom trait emergence speed
+- *Prediction*: Wisdom-optimized curriculum reaches 80% wisdom capacity in 60% of training time
+
+**H20: Wisdom Scaling Limits Hypothesis**
+- Unlike raw capability (which scales with compute/data), wisdom traits exhibit diminishing returns or even inverse scaling beyond certain model sizes, requiring architectural innovations beyond scale.
+- *Test*: Evaluate wisdom traits across model size spectrum (1B to 100B+ parameters)
+- *Prediction*: Capability scales log-linearly; wisdom plateaus or decreases beyond certain threshold without architectural changes
+
+---
+
+## VIII. Graph-Specific Research Questions
+
+### Queries Enabled by Artificial Phronesis Knowledge Graph
+
+**GQ1: Show me how Artificial Wisdom differs from Artificial Intelligence in terms of traits, and which AI systems move us from one to the other.**
+- Compare trait sets, identify architectures bridging the gap
+
+**GQ2: Which psychological wisdom traits have NO implementations in current AI architectures?**
+- Gap analysis: traits in psychology papers without architectural instantiations
+
+**GQ3: What papers bridge human wisdom science and AI research?**
+- Co-citation analysis, papers discussing both domains
+
+**GQ4: How has the definition of "artificial wisdom" evolved over time?**
+- Temporal analysis of papers, track definitional drift
+
+**GQ5: Which authors are central to the AI wisdom discourse?**
+- PageRank, betweenness centrality on author-paper network
+
+**GQ6: Can we predict which wisdom traits will be implemented next based on current research trends?**
+- Temporal patterns, missing links, speculative path analysis
+
+**GQ7: What are the most under-connected concepts in the graph?**
+- Low-degree nodes, research gaps, opportunities for integration
+
+**GQ8: How does the concept of "sapience" relate to wisdom, intelligence, and consciousness?**
+- Graph distance, shared traits, definitional overlap
+
+**GQ9: Which AI architectures implement the most wisdom traits?**
+- Ranking systems by trait coverage
+
+**GQ10: What conceptual confusions or conflations exist in the literature?**
+- Synonyms treated as distinct, distinct concepts treated as synonyms
+- GraphRAG disambiguation
+
+---
+
+## IX. Meta-Questions About the Knowledge Graph Itself
+
+**MQ1: Does the knowledge graph reveal coherent structure or chaos?**
+- Are there clear conceptual hierarchies, or is it a tangled web?
+- Does structure emerge at certain scales?
+
+**MQ2: Can the graph identify "conceptual orphans"—ideas with no connections?**
+- Isolated nodes, singleton concepts
+- Opportunities to integrate or refine
+
+**MQ3: How does graph density change over time as literature accumulates?**
+- Are concepts becoming more interconnected or more fragmented?
+
+**MQ4: Can we use graph structure to generate new research questions?**
+- Shortest paths suggest unexplored connections
+- Triads with missing edges suggest potential relationships
+
+**MQ5: What biases exist in the knowledge graph?**
+- Geographic (Western-centric?), temporal (recent vs. historical), disciplinary (AI-heavy vs. philosophy-light)
+- How to correct for selection effects?
+
+---
+
+## X. Practical Research Agenda
+
+### Immediate Priorities (can be answered with current graph)
+
+1. **Definitional Analysis**: Use GraphRAG to extract and compare all definitions of "Artificial Wisdom"
+2. **Trait Coverage**: Map psychological wisdom traits to AI architectures, identify gaps
+3. **Bridge Identification**: Find papers/authors connecting disciplines
+4. **Conceptual Similarity**: Quantify overlap between AW, Machine Phronesis, Computational Sapience
+
+### Medium-Term (require additional ingestion)
+
+5. **Temporal Evolution**: Track how definitions change over time (need year-tagged papers)
+6. **Citation Network Analysis**: PageRank, betweenness for author/paper influence
+7. **Empirical Case Studies**: Add papers on deployed AI, test wisdom hypotheses
+
+### Long-Term (require new capabilities)
+
+8. **Automated Hypothesis Generation**: Use graph structure to propose novel research questions
+9. **Counterfactual Reasoning**: "What if we had connected X and Y earlier?"
+10. **Predictive Modeling**: Forecast which research directions will emerge
+
+---
+
+## XI. Example Usage with GraphRAG
+
+### Sample Queries to Run
+
+```python
+# RQ4.5: Improve definitional clarity
+result = hybrid_rag.query_with_context(
+    "How is 'Artificial Wisdom' defined across different papers? Identify variations and commonalities.",
+    concepts=["Artificial Wisdom"]
+)
+
+# RQ4.7: Find unimplemented traits
+gaps = hybrid_rag.find_implementation_gaps("Artificial Wisdom")
+
+# RQ1.1: Compare constructs
+comparison = hybrid_rag.compare_concepts("Wisdom", "Intelligence")
+
+# RQ4.2: Identify bridge scholars
+# (requires Neo4j query)
+query = """
+MATCH (p1:Paper)-[:DISCUSSES]->(c1:Concept)
+WHERE c1.domain CONTAINS 'psychology'
+WITH p1
+MATCH (p1)-[:DISCUSSES]->(c2:Concept)
+WHERE c2.domain CONTAINS 'AI'
+MATCH (a:Author)-[:AUTHORED]->(p1)
+RETURN a.name, count(p1) as bridge_papers
+ORDER BY bridge_papers DESC
+"""
+
+# RQ2.1: Which AI systems implement which traits
+query = """
+MATCH (arch:Architecture)-[:IMPLEMENTS_ASPECT_OF]->(t:Trait)
+RETURN arch.name, collect(t.name) as traits
+ORDER BY size(traits) DESC
+"""
+```
+
+---
+
+## XII. Output Targets
+
+This research framework should produce:
+
+1. **Academic Paper**: "Mapping the Landscape of Artificial Wisdom: A Knowledge Graph Analysis"
+2. **Interactive Dashboard**: Visualize gaps, bridges, evolution over time
+3. **Research Agenda Document**: Prioritized list of open questions for the field
+4. **Policy Brief**: "Should AI Safety Frameworks Incorporate Wisdom?"
+5. **Invited Talks**: Share insights with leading minds in philosophy, psychology, AI
+6. **Collaboration Proposals**: Identify natural research partnerships based on graph analysis
+
+---
+
+## XIII. Continuous Refinement
+
+This framework should be:
+
+- **Iterated**: As new papers are ingested, new questions emerge
+- **Community-driven**: Open for contributions from researchers
+- **Empirically grounded**: Answers should be testable with graph queries
+- **Practically relevant**: Inform AI development, governance, and ethics
+
+**Living Document Status**: v1.0 (Initial comprehensive framework)
+**Next Update**: After ingesting first batch of papers and running exploratory queries
+**Maintainer**: Artificial Phronesis Project
+**Contributions Welcome**: github.com/Chrisfoz/Artificial-Phronesis/issues
