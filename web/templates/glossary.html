@@ -1,0 +1,428 @@
+{% extends "base.html" %}
+
+{% block title %}Glossary - Wisdom Framework Guide{% endblock %}
+
+{% block extra_head %}
+<style>
+    .glossary-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .glossary-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .glossary-header h2 {
+        color: var(--primary-color);
+    }
+    
+    .search-box {
+        margin-bottom: 2rem;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    
+    .search-input:focus {
+        border-color: var(--primary-color);
+    }
+    
+    .category-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+    }
+    
+    .category-btn:hover,
+    .category-btn.active {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+    
+    .glossary-section {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .term-card {
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: box-shadow 0.3s;
+    }
+    
+    .term-card:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .term-card.hidden {
+        display: none;
+    }
+    
+    .term-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+    
+    .term-category {
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .term-definition {
+        line-height: 1.7;
+        color: #333;
+    }
+    
+    .term-related {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+        font-size: 0.9rem;
+    }
+    
+    .term-related a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+    
+    .term-related a:hover {
+        text-decoration: underline;
+    }
+    
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: #666;
+        display: none;
+    }
+    
+    .no-results.visible {
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="glossary-container">
+        <div class="glossary-header">
+            <h2>Wisdom Glossary</h2>
+            <p>Key terms and concepts from wisdom research</p>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" class="search-input" id="search-input" placeholder="Search terms..." autocomplete="off">
+        </div>
+        
+        <div class="category-nav">
+            <button class="category-btn active" data-category="all">All Terms</button>
+            <button class="category-btn" data-category="core">Core Concepts</button>
+            <button class="category-btn" data-category="sdwise">SD-WISE Traits</button>
+            <button class="category-btn" data-category="frameworks">Frameworks</button>
+            <button class="category-btn" data-category="philosophy">Philosophy</button>
+        </div>
+        
+        <div id="glossary-content">
+            <div class="glossary-section" data-section="core">
+                <h3 class="section-title">Core Concepts</h3>
+                
+                <div class="term-card" data-category="core" data-terms="wisdom intelligence">
+                    <div class="term-name">Wisdom vs Intelligence</div>
+                    <div class="term-category">Core Concept</div>
+                    <div class="term-definition">
+                        <strong>Intelligence</strong> refers to cognitive abilities—pattern recognition, problem-solving, learning speed. 
+                        <strong>Wisdom</strong> involves the application of knowledge and experience with good judgment, particularly in complex, 
+                        uncertain, or value-laden situations. Intelligence asks "Can this be done?" while wisdom asks "Should this be done, 
+                        and for whom?"
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="core" data-terms="artificial wisdom ai">
+                    <div class="term-name">Artificial Wisdom</div>
+                    <div class="term-category">Core Concept</div>
+                    <div class="term-definition">
+                        A framework for developing AI systems that support wiser human judgment rather than merely optimizing for capability. 
+                        Artificial Wisdom emphasizes uncertainty acknowledgment, value trade-offs, perspective-taking, and reflective balance 
+                        over speed and confidence.
+                    </div>
+                    <div class="term-related">Related: <a href="#" data-scroll="wisdom-intelligence">Wisdom vs Intelligence</a></div>
+                </div>
+                
+                <div class="term-card" data-category="core" data-terms="wise reasoning">
+                    <div class="term-name">Wise Reasoning</div>
+                    <div class="term-category">Core Concept</div>
+                    <div class="term-definition">
+                        A cognitive process characterized by intellectual humility, recognition of uncertainty, consideration of multiple 
+                        perspectives, and integration of different viewpoints. Developed by Igor Grossmann, wise reasoning is measurable 
+                        and can be cultivated through specific practices.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glossary-section" data-section="sdwise">
+                <h3 class="section-title">SD-WISE Traits</h3>
+                
+                <div class="term-card" data-category="sdwise" data-terms="self-reflection insight">
+                    <div class="term-name">Self-Reflection (Self-Insight)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        The capacity to examine one's own thoughts, feelings, motivations, and behaviors with honesty and depth. 
+                        Self-reflective individuals regularly question their assumptions and seek to understand the deeper reasons 
+                        behind their actions.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="prosocial compassion altruism">
+                    <div class="term-name">Prosocial Behaviors (Compassion/Altruism)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        Actions intended to benefit others, driven by genuine concern for their wellbeing. Includes empathy, 
+                        compassion, and willingness to help even at personal cost. A key component of wisdom that connects 
+                        individual insight to social benefit.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="emotional regulation homeostasis">
+                    <div class="term-name">Emotional Regulation (Emotional Homeostasis)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        The ability to manage and modulate emotional responses appropriately. Not suppression of emotions, 
+                        but the capacity to experience emotions without being overwhelmed, and to return to equilibrium 
+                        after disturbance.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="value relativism perspectives diversity">
+                    <div class="term-name">Acceptance of Diverse Perspectives (Value Relativism)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        Recognition that different people may hold different values and that these differences can be legitimate. 
+                        Not moral relativism (anything goes), but acknowledgment that context matters and that reasonable people 
+                        can disagree on complex issues.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="decisiveness decision uncertainty">
+                    <div class="term-name">Decisiveness</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        The ability to make timely decisions even under uncertainty. Wise decisiveness balances thorough 
+                        consideration with the recognition that perfect information is rarely available and that inaction 
+                        itself has consequences.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="social advising pragmatic knowledge">
+                    <div class="term-name">Social Advising (Pragmatic Knowledge of Life)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        Practical wisdom about navigating life's challenges, including relationships, career, and personal 
+                        development. The ability to offer sound guidance based on experience and understanding of human nature.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="spirituality transcendence meaning">
+                    <div class="term-name">Spirituality (Self-Transcendence)</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        A sense of connection to something larger than oneself—whether understood religiously, philosophically, 
+                        or through connection to nature, humanity, or future generations. Involves reflection on meaning and purpose.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="openness experience curiosity">
+                    <div class="term-name">Openness to New Experiences</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        Willingness to engage with novel ideas, perspectives, and situations. Includes intellectual curiosity, 
+                        appreciation for learning, and comfort with ambiguity. Essential for continued growth and adaptation.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="sdwise" data-terms="humor levity perspective">
+                    <div class="term-name">Sense of Humor</div>
+                    <div class="term-category">SD-WISE Trait</div>
+                    <div class="term-definition">
+                        The ability to find lightness and perspective even in difficult situations. Not dismissiveness, 
+                        but a capacity to maintain balance and not take oneself too seriously. Contributes to resilience 
+                        and social connection.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glossary-section" data-section="philosophy">
+                <h3 class="section-title">Philosophical Concepts</h3>
+                
+                <div class="term-card" data-category="philosophy" data-terms="phronesis practical wisdom aristotle">
+                    <div class="term-name">Phronesis (Practical Wisdom)</div>
+                    <div class="term-category">Philosophy</div>
+                    <div class="term-definition">
+                        An Aristotelian concept referring to practical wisdom—the ability to discern the right course of action 
+                        in particular circumstances. Unlike theoretical knowledge (episteme) or technical skill (techne), 
+                        phronesis involves judgment about what is good and how to achieve it in specific situations.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="philosophy" data-terms="eudaimonia flourishing wellbeing">
+                    <div class="term-name">Eudaimonia</div>
+                    <div class="term-category">Philosophy</div>
+                    <div class="term-definition">
+                        Often translated as "flourishing" or "wellbeing," eudaimonia in Aristotelian philosophy refers to 
+                        living well and doing well—a life of virtue and meaning rather than mere pleasure or material success. 
+                        Wisdom is considered essential for achieving eudaimonia.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="philosophy" data-terms="epistemic humility uncertainty knowledge">
+                    <div class="term-name">Epistemic Humility</div>
+                    <div class="term-category">Philosophy</div>
+                    <div class="term-definition">
+                        Recognition of the limits of one's knowledge and the possibility of being wrong. A key component of 
+                        wise reasoning that guards against overconfidence and promotes openness to new information and perspectives.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glossary-section" data-section="frameworks">
+                <h3 class="section-title">Research Frameworks</h3>
+                
+                <div class="term-card" data-category="frameworks" data-terms="sd-wise jeste scale">
+                    <div class="term-name">SD-WISE (San Diego Wisdom Scale)</div>
+                    <div class="term-category">Framework</div>
+                    <div class="term-definition">
+                        A validated psychometric instrument developed by Dilip Jeste and colleagues measuring nine components 
+                        of wisdom: self-reflection, prosocial behaviors, emotional regulation, acceptance of diverse perspectives, 
+                        decisiveness, social advising, spirituality, openness to new experiences, and sense of humor.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="frameworks" data-terms="berlin wisdom paradigm baltes">
+                    <div class="term-name">Berlin Wisdom Paradigm</div>
+                    <div class="term-category">Framework</div>
+                    <div class="term-definition">
+                        Developed by Paul Baltes and colleagues at the Max Planck Institute, this framework defines wisdom as 
+                        "expert knowledge in the fundamental pragmatics of life." It emphasizes factual knowledge, procedural 
+                        knowledge, lifespan contextualism, value relativism, and recognition of uncertainty.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="frameworks" data-terms="three-dimensional wisdom ardelt">
+                    <div class="term-name">Three-Dimensional Wisdom Scale (3D-WS)</div>
+                    <div class="term-category">Framework</div>
+                    <div class="term-definition">
+                        Monika Ardelt's model conceptualizing wisdom as the integration of cognitive (understanding life), 
+                        reflective (self-examination and perspective-taking), and affective (compassion and sympathy) dimensions.
+                    </div>
+                </div>
+                
+                <div class="term-card" data-category="frameworks" data-terms="hero webster self-assessed">
+                    <div class="term-name">HERO(E) Model (Webster)</div>
+                    <div class="term-category">Framework</div>
+                    <div class="term-definition">
+                        Jeffrey Dean Webster's Self-Assessed Wisdom Scale measuring five dimensions: Humor, Experience (critical 
+                        life experiences), Reminiscence/Reflectiveness, Openness, and Emotional Regulation. Emphasizes the role 
+                        of life experience in wisdom development.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="no-results" id="no-results">
+            <h3>No matching terms found</h3>
+            <p>Try a different search term or browse by category.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    const searchInput = document.getElementById('search-input');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const termCards = document.querySelectorAll('.term-card');
+    const noResults = document.getElementById('no-results');
+    
+    let currentCategory = 'all';
+    
+    function filterTerms() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+        
+        termCards.forEach(card => {
+            const category = card.dataset.category;
+            const terms = card.dataset.terms.toLowerCase();
+            const name = card.querySelector('.term-name').textContent.toLowerCase();
+            const definition = card.querySelector('.term-definition').textContent.toLowerCase();
+            
+            const matchesCategory = currentCategory === 'all' || category === currentCategory;
+            const matchesSearch = !searchTerm || 
+                terms.includes(searchTerm) || 
+                name.includes(searchTerm) || 
+                definition.includes(searchTerm);
+            
+            if (matchesCategory && matchesSearch) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        
+        document.querySelectorAll('.glossary-section').forEach(section => {
+            const visibleCards = section.querySelectorAll('.term-card:not(.hidden)');
+            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+        });
+        
+        noResults.classList.toggle('visible', visibleCount === 0);
+    }
+    
+    searchInput.addEventListener('input', filterTerms);
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.dataset.category;
+            filterTerms();
+        });
+    });
+</script>
+{% endblock %}

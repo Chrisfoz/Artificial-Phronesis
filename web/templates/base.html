@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Artificial Phronesis{% endblock %}</title>
+    <title>{% block title %}Wisdom Framework Guide{% endblock %}</title>
 
     <!-- Vis.js for graph visualization -->
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
@@ -17,13 +17,25 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1>Artificial Phronesis</h1>
-                <p class="tagline">Mapping the Conceptual Landscape of Wisdom and Intelligence</p>
+                <a href="/" style="text-decoration: none; color: inherit;">
+                    <h1>🧭 Wisdom Framework Guide</h1>
+                    <p class="tagline">From Intelligence to Wisdom</p>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home</a></li>
-                <li><a href="/about" class="{% if request.url.path == '/about' %}active{% endif %}">About</a></li>
-                <li><a href="/references" class="{% if request.url.path == '/references' %}active{% endif %}">References</a></li>
+                <li><a href="/wisdom-agent" class="{% if request.url.path == '/wisdom-agent' %}active{% endif %}">Wisdom Agent</a></li>
+                <li><a href="/self-evaluation" class="{% if request.url.path == '/self-evaluation' %}active{% endif %}">Self-Evaluation</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Learn ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/glossary">Glossary</a></li>
+                        <li><a href="/further-reading">Further Reading</a></li>
+                        <li><a href="/references">References</a></li>
+                    </ul>
+                </li>
+                <li><a href="/settings" class="{% if request.url.path == '/settings' %}active{% endif %}">⚙️</a></li>
             </ul>
         </div>
     </nav>
@@ -34,10 +46,71 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Artificial Phronesis Project | Exploring Computational Sapience</p>
-            <p>Built with Neo4j, GraphRAG, and ❤️ for wisdom research</p>
+            <p>&copy; 2024 Wisdom Framework Guide | Exploring Artificial Wisdom</p>
+            <p>Grounded in SD-WISE, Ardelt, Baltes, Grossmann, and wisdom research traditions</p>
+            <p class="footer-links">
+                <a href="/about">About</a> |
+                <a href="/glossary">Glossary</a> |
+                <a href="/further-reading">Further Reading</a> |
+                <a href="/settings">Privacy & Settings</a>
+            </p>
         </div>
     </footer>
+
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 160px;
+            z-index: 100;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu li {
+            padding: 0;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f0f0f0;
+            color: var(--primary-color);
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+    </style>
 
     {% block extra_scripts %}{% endblock %}
 </body>
